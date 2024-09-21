@@ -1,5 +1,7 @@
 # Doll is a Mac app that help you catch up important messages!
 
+It's a fork with badge and localization fixes.
+
 In **macOS**, It feels really great when you hide the **Dock**, open a **full screen** window and focus on your task.
 
 But we are not living in an ideal world, your teammates may need your help anytime, and when you are in focus mode, occasionally you just _**forgot to respond**_!

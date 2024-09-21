@@ -83,12 +83,23 @@ public struct MonitorService {
 
         // Get badge text by lookup dock elements
         for child in dockChildren {
-            var title: AnyObject?
-
-            AXUIElementCopyAttributeValue(child, kAXTitleAttribute as CFString, &title)
-            if let titleStr = title as? String,
-               titleStr == appName {
-                return child
+//            var title: AnyObject?
+//
+//            AXUIElementCopyAttributeValue(child, kAXTitleAttribute as CFString, &title)
+//            if let titleStr = title as? String,
+//               titleStr == appName {
+//                return child
+//            }
+            
+            var url: AnyObject?
+            
+            AXUIElementCopyAttributeValue(child, kAXURLAttribute as CFString, &url)
+            
+            if let url = url as? URL {
+                let urlAppName = url.deletingPathExtension().lastPathComponent
+                if urlAppName == appName{
+                    return child
+                }
             }
         }
 

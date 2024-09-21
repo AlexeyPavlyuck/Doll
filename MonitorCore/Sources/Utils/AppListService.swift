@@ -40,7 +40,8 @@ public class AppListService {
 
             let bundleIdentifier = item.value(forAttribute: kMDItemCFBundleIdentifier as String) as? String
             let fullPath = item.value(forAttribute: kMDItemPath as String) as? String
-            let displayName = item.value(forAttribute: kMDItemDisplayName as String) as? String
+//            let displayName = item.value(forAttribute: kMDItemDisplayName as String) as? String
+            let displayName = item.value(forAttribute: kMDItemFSName as String) as? String
             let icon = NSWorkspace.shared.icon(forFile: fullPath ?? "")
 
             if let id = bundleIdentifier, let path = fullPath, let name = displayName {

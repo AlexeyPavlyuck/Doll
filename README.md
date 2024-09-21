@@ -49,6 +49,14 @@ Doll also can show new notification as red badge, just like in dock!
 
 ![show as badge](./Doll/Docs/Images/show-as-badge.png)
 
+Add your own monochrome icons for more style! You can get them for example here: https://icon-sets.iconify.design/.
+
+You can download examples of icons in the releases.
+
+![add your icons](./Doll/Docs/Images/choose-custom-icon.png)
+
+![example custom icons](./Doll/Docs/Images/example-custom-icons.png)
+
 # I want to change the Monitor apps
 If the monitored app is running, click on the menu bar icon will simply open that app.
 

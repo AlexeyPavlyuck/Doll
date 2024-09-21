@@ -10,6 +10,7 @@ class StatusBarController {
     private var isDark = false
     private var latestBadgeText = ""
     private var latestMessageCount = 0
+    private var badgeModel = BadgeModel()
 
     private var giantBadgeController = GiantBadgeViewController()
     private var giantBadgePanel = NSPanel(contentRect: NSRect(origin: .zero, size: defaultWindowSize),
@@ -32,16 +33,21 @@ class StatusBarController {
     func setupStatusBar(icon: NSImage? = nil) {
         statusBar = .system
         statusItem = statusBar.statusItem(withLength: defaultIconSize)
-        if let statusBarButton = statusItem.button {
-            statusBarButton.sendAction(on: [.leftMouseUp, .rightMouseUp])
-            statusBarButton.image = icon ?? defaultIcon
-            statusBarButton.image?.size = NSSize(width: defaultIconSize, height: defaultIconSize)
-            statusBarButton.image?.isTemplate = false
-            statusBarButton.imagePosition = .imageLeft
-            statusBarButton.action = #selector(onIconClicked(sender:))
-            statusBarButton.target = self
-            statusBarButton.toolTip = NSLocalizedString("Hold option key ⌥ and click to config", comment: "")
-        }
+        
+        guard let statusBarButton = statusItem.button else { return }
+
+        statusBarButton.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        statusBarButton.image = icon ?? defaultIcon
+        statusBarButton.image?.size = NSSize(width: defaultIconSize, height: defaultIconSize)
+        statusBarButton.image?.isTemplate = false
+        statusBarButton.imagePosition = .imageLeft
+        statusBarButton.action = #selector(onIconClicked(sender:))
+        statusBarButton.target = self
+        statusBarButton.toolTip = NSLocalizedString("Hold option key ⌥ and click to config", comment: "")
+        
+        let badge = NSHostingView(rootView: BadgeView(model: badgeModel ))
+        badge.setFrameOrigin(NSPoint(x: defaultIconSize, y: 1))
+        statusBarButton.addSubview(badge)
 
         giantBadgePanel.isOpaque = false
         giantBadgePanel.hasShadow = false
@@ -177,9 +183,17 @@ class StatusBarController {
         }
 
         if AppSettings.showAsRedBadge {
-            let defaultIcon = monitoredAppIcon.addBadgeToImage(drawText: newText)
+            let defaultIcon = monitoredAppIcon
             let adjustedIcon = (newText.isEmpty && AppSettings.grayoutIconWhenNothingComing) ? (defaultIcon.grayOut() ?? defaultIcon) : defaultIcon
+            adjustedIcon.size = NSSize(width: defaultIconSize, height: defaultIconSize)
             updateBadgeIcon(icon: adjustedIcon)
+            
+            if let text = text, let count = Int(text) {
+                badgeModel.count = count
+            } else {
+                badgeModel.count = 0
+            }
+            
             statusItem.length = defaultIconSize
             statusItem.button?.title = ""
         } else {

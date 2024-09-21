@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08E90B272C9CC01D00EA975D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 08E90B262C9CC01D00EA975D /* Introspect */; };
+		08E90B292C9E237500EA975D /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E90B282C9E236D00EA975D /* BadgeView.swift */; };
 		3A05F079FD8ED95600C00E09 /* NSEventExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05FE1708B1B3E267E75950 /* NSEventExtensions.swift */; };
 		3A05F0D44C56AF54405AF0C8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3A05F569906D4FC793ED3B11 /* README.md */; };
 		3A05F16312AEFBD25670304B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A05FE513B0F76D50EE9A90B /* Assets.xcassets */; };
@@ -34,12 +36,12 @@
 		B09C303928536AF9004CC54F /* Utils in Frameworks */ = {isa = PBXBuildFile; productRef = B09C303828536AF9004CC54F /* Utils */; };
 		B09C303B285380DC004CC54F /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C303A285380DC004CC54F /* ConfigView.swift */; };
 		B0CC3C83285393B0006F6361 /* MonitorConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC3C82285393B0006F6361 /* MonitorConfigView.swift */; };
-		B0CC3C862854745B006F6361 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = B0CC3C852854745B006F6361 /* Introspect */; };
 		B0CC3C8828547594006F6361 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC3C8728547594006F6361 /* Utils.swift */; };
 		B0CC3C9128556203006F6361 /* NSImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC3C9028556203006F6361 /* NSImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08E90B282C9E236D00EA975D /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		3A05F1218D99BE11708A20CF /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		3A05F135761A1F95B691AC9F /* UserDefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultSettings.swift; sourceTree = "<group>"; };
 		3A05F3535C3D4AB6303DEDA5 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -79,8 +81,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B09C303928536AF9004CC54F /* Utils in Frameworks */,
-				B0CC3C862854745B006F6361 /* Introspect in Frameworks */,
 				893D12FC296DB2C10071F166 /* KeyboardShortcuts in Frameworks */,
+				08E90B272C9CC01D00EA975D /* Introspect in Frameworks */,
 				89CB806827A312340065CA70 /* LaunchAtLogin in Frameworks */,
 				B09C303728536AF9004CC54F /* Monitor in Frameworks */,
 			);
@@ -157,6 +159,7 @@
 		89CB807627A312F10065CA70 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08E90B282C9E236D00EA975D /* BadgeView.swift */,
 				89CB807727A312F10065CA70 /* AboutView.swift */,
 				89CB807827A312F10065CA70 /* StatusBarController.swift */,
 				89CB807927A312F10065CA70 /* AppItemView.swift */,
@@ -202,8 +205,8 @@
 				89CB806727A312340065CA70 /* LaunchAtLogin */,
 				B09C303628536AF9004CC54F /* Monitor */,
 				B09C303828536AF9004CC54F /* Utils */,
-				B0CC3C852854745B006F6361 /* Introspect */,
 				893D12FB296DB2C10071F166 /* KeyboardShortcuts */,
+				08E90B262C9CC01D00EA975D /* Introspect */,
 			);
 			productName = Doll;
 			productReference = 3A05F88D951B0284A8B90FF0 /* Doll.app */;
@@ -228,8 +231,8 @@
 			mainGroup = 3A05FCDDC5EF87DE55A19459;
 			packageReferences = (
 				89CB806627A312340065CA70 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
-				B0CC3C842854745B006F6361 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 				893D12FA296DB2C10071F166 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				08E90B252C9CC01D00EA975D /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = 3A05F354614726EB3883F97A /* Products */;
 			projectDirPath = "";
@@ -282,6 +285,7 @@
 				89CB808527A313650065CA70 /* AppDelegate.swift in Sources */,
 				89CB808127A312F10065CA70 /* ApplicationListView.swift in Sources */,
 				89CB807E27A312F10065CA70 /* AboutView.swift in Sources */,
+				08E90B292C9E237500EA975D /* BadgeView.swift in Sources */,
 				89CB808027A312F10065CA70 /* AppItemView.swift in Sources */,
 				89CB808627A313650065CA70 /* DollApplication.swift in Sources */,
 				89CB808227A312F10065CA70 /* MonitorEngine.swift in Sources */,
@@ -364,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -392,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 0.0.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaogd.Doll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,7 +424,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 0.0.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaogd.Doll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -514,6 +518,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		08E90B252C9CC01D00EA975D /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.4;
+			};
+		};
 		893D12FA296DB2C10071F166 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
@@ -530,17 +542,14 @@
 				kind = branch;
 			};
 		};
-		B0CC3C842854745B006F6361 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:siteline/SwiftUI-Introspect.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		08E90B262C9CC01D00EA975D /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08E90B252C9CC01D00EA975D /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = Introspect;
+		};
 		893D12FB296DB2C10071F166 /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 893D12FA296DB2C10071F166 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
@@ -558,11 +567,6 @@
 		B09C303828536AF9004CC54F /* Utils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utils;
-		};
-		B0CC3C852854745B006F6361 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B0CC3C842854745B006F6361 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

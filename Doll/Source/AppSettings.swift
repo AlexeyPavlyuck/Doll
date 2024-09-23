@@ -13,7 +13,7 @@ class AppSettings {
     static var showAlertInFullScreenMode = true
 
     @UserDefaultSetting("SETTINGS_Show_As_Red_Badge")
-    static var showAsRedBadge = false
+    static var showAsRedBadge = true
 
     @UserDefaultSetting("SETTINGS_Show_Only_App_Icon")
     static var showOnlyAppIcon = false
